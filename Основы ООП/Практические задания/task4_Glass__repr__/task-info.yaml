@@ -10,15 +10,15 @@ files:
   visible: true
   placeholders:
   - offset: 315
-    length: 94
+    length: 63
     placeholder_text: '...  # TODO метод должен возвращать строку, по которой можно
       инициализировать экземпляр класса'
     initial_state:
       length: 94
       offset: 315
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: return f"Glass({self.capacity_volume}, {self.occupied_volume})"
   text: |
     from typing import Union
@@ -42,5 +42,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Wed, 22 Dec 2021 15:57:05 UTC
 record: -1

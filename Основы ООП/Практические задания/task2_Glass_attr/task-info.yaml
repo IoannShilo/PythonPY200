@@ -4,44 +4,44 @@ files:
   visible: true
   placeholders:
   - offset: 724
-    length: 44
+    length: 15
     placeholder_text: '...  # TODO инициализировать ещё один стакан'
     initial_state:
       length: 44
       offset: 724
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: 'Glass(500, 50)  # экземпляр класса'
-  - offset: 779
-    length: 51
+  - offset: 750
+    length: 47
     placeholder_text: '...)  # TODO распечатать атрибуты экземпляра glass2'
     initial_state:
       length: 51
       offset: 779
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: glass2.capacity_volume, glass2.occupied_volume)
-  - offset: 882
-    length: 37
+  - offset: 849
+    length: 53
     placeholder_text: '#  TODO доливаем воды в первый стакан'
     initial_state:
       length: 37
       offset: 882
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: glass1.occupied_volume += 100
-  - offset: 1041
-    length: 28
+  - offset: 1024
+    length: 23
     placeholder_text: '#  TODO сравнить id объектов'
     initial_state:
       length: 28
       offset: 1041
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: print(id(glass1) == id(glass2))
   text: |
     from typing import Union
@@ -79,6 +79,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  time: Wed, 22 Dec 2021 15:35:39 UTC
 record: -1
 post_submission_on_open: true

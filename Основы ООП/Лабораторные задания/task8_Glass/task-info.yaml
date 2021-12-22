@@ -17,8 +17,8 @@ files:
       length: 47
       offset: 0
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |
       # TODO
   text: '# TODO Добавить методы add_water и remove_water'
@@ -26,6 +26,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  time: Wed, 22 Dec 2021 17:33:41 UTC
 record: -1
 post_submission_on_open: true
