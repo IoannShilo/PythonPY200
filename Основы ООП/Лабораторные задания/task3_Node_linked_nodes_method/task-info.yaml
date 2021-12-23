@@ -10,24 +10,24 @@ files:
   visible: true
   placeholders:
   - offset: 1025
-    length: 30
+    length: 31
     placeholder_text: '...  # TODO реализовать функцию'
     initial_state:
       length: 31
       offset: 1025
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: left_node.set_next(right_node)
-  - offset: 1141
-    length: 37
+  - offset: 1142
+    length: 71
     placeholder_text: '...  # TODO связать между собой два узла с помощью функции
       linked_nodes'
     initial_state:
       length: 71
       offset: 1142
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: linked_nodes(first_node, second_node)
   text: |
@@ -85,5 +85,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 22 Dec 2021 17:13:29 UTC
+  time: Thu, 23 Dec 2021 20:42:11 UTC
 record: -1

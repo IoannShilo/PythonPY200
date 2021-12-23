@@ -10,14 +10,14 @@ files:
   visible: true
   placeholders:
   - offset: 418
-    length: 109
+    length: 89
     placeholder_text: '...  # TODO метод должен возвращать строку, которая содержит
       человеко-читаемую информацию'
     initial_state:
       length: 89
       offset: 418
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: return f"Стакан объёмом {self.capacity_volume}. Объём
       жидкости = {self.occupied_volume}"
@@ -49,5 +49,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 22 Dec 2021 16:03:01 UTC
+  time: Thu, 23 Dec 2021 20:41:43 UTC
 record: -1
