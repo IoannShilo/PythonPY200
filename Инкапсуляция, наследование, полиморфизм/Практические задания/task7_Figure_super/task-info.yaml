@@ -8,15 +8,15 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 202
-    length: 42
+  - offset: 203
+    length: 23
     placeholder_text: '# TODO вызвать конструктор базового класса'
     initial_state:
       length: 42
       offset: 202
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: super().__init__(name=name)
   text: |
     class Figure:
@@ -41,5 +41,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 14 Jan 2022 15:36:54 UTC
 record: -1

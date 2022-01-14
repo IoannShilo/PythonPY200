@@ -4,14 +4,14 @@ files:
   visible: true
   placeholders:
   - offset: 2127
-    length: 41
+    length: 148
     placeholder_text: '# TODO Реализовать класс DoubleLinkedList'
     initial_state:
       length: 41
       offset: 2127
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: '...'
   text: |
     from typing import Any, Iterable, Optional
@@ -130,6 +130,6 @@ files:
 
     # TODO реализовать класс DoubleLinkedNode
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1
 post_submission_on_open: true

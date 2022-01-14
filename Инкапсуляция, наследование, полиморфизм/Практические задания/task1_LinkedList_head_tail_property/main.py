@@ -7,25 +7,37 @@ from node import Node
 class LinkedList:
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
-        self.len = 0
-        self.head: Optional[Node] = None
-        self.tail = self.head
+        self._len = 0
+        self._head: Optional[Node] = None
+        self._tail = self.head
 
         if data is not None:
             for value in data:
                 self.append(value)
+
+    @property
+    def len(self):
+        return self._len
+
+    @property
+    def head(self):
+        return self._head
+
+    @property
+    def tail(self):
+        return self._tail
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
         append_node = Node(value)
 
         if self.head is None:
-            self.head = self.tail = append_node
+            self._head = self._tail = append_node
         else:
             self.linked_nodes(self.tail, append_node)
-            self.tail = append_node
+            self._tail = append_node
 
-        self.len += 1
+        self._len += 1
 
     def step_by_step_on_nodes(self, index: int) -> Node:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
@@ -40,6 +52,7 @@ class LinkedList:
             current_node = current_node.next
 
         return current_node
+
 
     @staticmethod
     def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:

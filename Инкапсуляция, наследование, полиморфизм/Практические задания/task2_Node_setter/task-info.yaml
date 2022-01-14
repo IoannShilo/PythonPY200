@@ -11,8 +11,8 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 399
-    length: 85
+  - offset: 390
+    length: 26
     placeholder_text: |-
       # TODO заменить на вызов setter
               self.next = None
@@ -21,11 +21,11 @@ files:
       length: 85
       offset: 399
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: 'self.next = next_  # вызовется setter'
-  - offset: 821
-    length: 153
+  - offset: 754
+    length: 251
     placeholder_text: |-
       # TODO заменить на getter и setter
           def set_next(self, next_: Optional["Node"] = None) -> None:
@@ -35,8 +35,8 @@ files:
       length: 153
       offset: 821
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       @property
           def next(self):
@@ -93,5 +93,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 14 Jan 2022 16:28:05 UTC
 record: -1

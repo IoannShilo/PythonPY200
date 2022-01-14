@@ -12,7 +12,7 @@ files:
   visible: true
   placeholders:
   - offset: 68
-    length: 2112
+    length: 2301
     placeholder_text: |-
       # TODO защитить от модификации атрибуты head, tail, len
       class LinkedList:
@@ -84,8 +84,8 @@ files:
       length: 2112
       offset: 68
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       class LinkedList:
           def __init__(self, data: Iterable = None):
@@ -280,5 +280,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 14 Jan 2022 17:21:10 UTC
 record: -1

@@ -10,27 +10,27 @@ files:
   visible: true
   placeholders:
   - offset: 245
-    length: 33
+    length: 32
     placeholder_text: '...  # TODO добавить атрибут tail'
     initial_state:
       length: 33
       offset: 245
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: self.tail = self.head
-  - offset: 548
-    length: 64
+  - offset: 547
+    length: 76
     placeholder_text: 'self.head = append_node  # TODO добавить использование self.tail'
     initial_state:
       length: 64
       offset: 548
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: self.head = self.tail = append_node
-  - offset: 639
-    length: 181
+  - offset: 650
+    length: 162
     placeholder_text: |-
       last_index = self.len - 1  # TODO Переделать через атрибут tail
                   last_node = self.step_by_step_on_nodes(last_index)
@@ -40,21 +40,21 @@ files:
       length: 181
       offset: 639
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       self.linked_nodes(self.tail, append_node)
                   self.tail = append_node
-  - offset: 1584
-    length: 89
+  - offset: 1576
+    length: 86
     placeholder_text: 'left_node.set_next(right_node)  # TODO next теперь свойство
       имеет setter, используйте это'
     initial_state:
       length: 89
       offset: 1584
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: left_node.next = right_node
   text: |
     from typing import Any, Iterable, Optional
@@ -180,5 +180,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 14 Jan 2022 17:10:34 UTC
 record: -1

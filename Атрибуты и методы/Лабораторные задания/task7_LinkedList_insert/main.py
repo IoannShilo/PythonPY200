@@ -73,14 +73,14 @@ class LinkedList:
             raise IndexError()
 
         if index == 0:
-            self.head = self.head.next
+            self.head = self.head.__next
         elif index == self.len - 1:
             tail = self.step_by_step_on_nodes(index-1)
             tail.next = None
         else:
             prev_node = self.step_by_step_on_nodes(index-1)
             del_node = prev_node.next
-            next_node = del_node.next
+            next_node = del_node.__next
 
             self.linked_nodes(prev_node, next_node)
 

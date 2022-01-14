@@ -70,4 +70,11 @@ class LinkedList:
         return f"{self.to_list()}"
 
 
-# TODO Реализовать класс DoubleLinkedList
+class DoubleLinkedList(LinkedList):
+
+    def __init__(self, data, prev):
+        super().__init__(data)
+        self.prev = prev
+
+    @staticmethod
+

@@ -9,14 +9,14 @@ class TestCase(unittest.TestCase):
         node = Node("node_without_next")
 
         msg = "Значение следующего узла по умолчанию должно быть None"
-        self.assertIsNone(node.next, msg)
+        self.assertIsNone(node.__next, msg)
 
     def test_init_node_with_next(self):
         right_node = Node("right")
         left_node = Node("left", right_node)
 
         msg = "Значение следующего при инициализации некорректно"
-        self.assertEqual(repr(left_node.next), repr(right_node), msg)
+        self.assertEqual(repr(left_node.__next), repr(right_node), msg)
 
     def test_repr_node_without_next(self):
         node = Node("node_without_next")
@@ -42,7 +42,7 @@ class TestCase(unittest.TestCase):
             Node.is_valid("incorrect_type")
 
     def test_next_property(self):
-        self.assertEqual(Node("test").next, None)
+        self.assertEqual(Node("test").__next, None)
 
         next_node = Node("next")
-        self.assertEqual(id(Node("test", next_node).next), id(next_node))
+        self.assertEqual(id(Node("test", next_node).__next), id(next_node))
