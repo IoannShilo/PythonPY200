@@ -10,59 +10,59 @@ files:
   visible: true
   placeholders:
   - offset: 371
-    length: 44
+    length: 29
     placeholder_text: '...  # TODO добавить атрибуты'
     initial_state:
       length: 29
       offset: 371
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       self.value = value
               self.next = next_
-  - offset: 521
-    length: 17
+  - offset: 506
+    length: 33
     placeholder_text: '...  # TODO вернуть значение узла'
     initial_state:
       length: 33
       offset: 506
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: return self.value
-  - offset: 544
-    length: 64
+  - offset: 545
+    length: 30
     placeholder_text: '# TODO добавить метод get_next'
     initial_state:
       length: 30
       offset: 545
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       def get_next(self) -> Optional["Node"]:
               """Метод, который возвращает значение атрибута next"""
               return self.next
-  - offset: 724
-    length: 29
+  - offset: 691
+    length: 57
     placeholder_text: '# TODO с помощью метода распечатать значение первого узла'
     initial_state:
       length: 57
       offset: 691
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: print(first_node.get_value())
-  - offset: 758
-    length: 29
+  - offset: 753
+    length: 64
     placeholder_text: '# TODO  с помощью метода распечатать следующий узел второго
       узла'
     initial_state:
       length: 64
       offset: 753
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: print(second_node.get_next())
   text: |
@@ -100,5 +100,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 22 Dec 2021 16:27:05 UTC
+  time: Thu, 23 Dec 2021 20:41:48 UTC
 record: -1

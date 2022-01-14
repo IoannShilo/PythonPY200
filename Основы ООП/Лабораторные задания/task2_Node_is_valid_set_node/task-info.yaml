@@ -12,21 +12,21 @@ files:
 - name: task.py
   visible: true
   placeholders:
-  - offset: 395
-    length: 49
+  - offset: 399
+    length: 68
     placeholder_text: '# TODO установить значение следующего узла с помощью метода
       set_next'
     initial_state:
       length: 68
       offset: 399
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       self.next = None
               self.set_next(next_)
-  - offset: 579
-    length: 72
+  - offset: 602
+    length: 64
     placeholder_text: |-
       # TODO метод проверки корректности связываемого узла
               ...
@@ -34,13 +34,13 @@ files:
       length: 64
       offset: 602
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       if not isinstance(node, (type(None), Node)):
                   raise TypeError
-  - offset: 725
-    length: 46
+  - offset: 740
+    length: 98
     placeholder_text: |-
       # TODO метод должен проверять корректность узла и устанавливать значение атрибуту next
               ...
@@ -48,31 +48,31 @@ files:
       length: 98
       offset: 740
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       self.is_valid(next_)
               self.next = next_
-  - offset: 805
-    length: 46
+  - offset: 872
+    length: 50
     placeholder_text: '# TODO инициализируйте два узла с любыми значеними'
     initial_state:
       length: 50
       offset: 872
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       first_node = Node(1)
           second_node = Node(2)
-  - offset: 857
-    length: 32
+  - offset: 928
+    length: 36
     placeholder_text: '# TODO свяжите первый узел со вторым'
     initial_state:
       length: 36
       offset: 928
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: first_node.set_next(second_node)
   text: |
@@ -115,5 +115,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 22 Dec 2021 17:08:40 UTC
+  time: Thu, 23 Dec 2021 20:42:07 UTC
 record: -1
