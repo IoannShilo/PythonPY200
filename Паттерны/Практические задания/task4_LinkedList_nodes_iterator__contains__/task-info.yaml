@@ -13,29 +13,29 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 2238
-    length: 53
+  - offset: 2232
+    length: 144
     placeholder_text: '...  # TODO функция-генератор для перебора всех узлов'
     initial_state:
       length: 53
       offset: 2238
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       current_node = self.head
               for _ in range(self.len):
                   yield current_node
                   current_node = current_node.next
-  - offset: 2297
-    length: 36
+  - offset: 2381
+    length: 214
     placeholder_text: '# TODO определить метод __contains__'
     initial_state:
       length: 36
       offset: 2297
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       def __contains__(self, item):
               print("Вызван метод \"__contains__\"")
@@ -168,5 +168,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Wed, 19 Jan 2022 15:29:43 UTC
 record: -1

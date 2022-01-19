@@ -70,10 +70,22 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
-    def nodes_iterator(self) -> Iterator[Node]:
-        ...  # TODO функция-генератор для перебора всех узлов
+    def _nodes_iterator(self) -> Iterator[Node]:
 
-    # TODO определить метод __contains__
+        current_node = self.head
+
+        for _ in range(self.len):
+            yield current_node
+            current_node = current_node.next
+
+    def __contains__(self, item) -> bool:
+        print("Вызван метод \"__contains__\"")
+        for node in self._nodes_iterator():
+            if node.value == item:
+                return True
+        return False
+
+
 
 
 if __name__ == '__main__':
