@@ -72,9 +72,26 @@ class LinkedList:
 
 class DoubleLinkedList(LinkedList):
 
-    def __init__(self, data, prev):
+    def __init__(self, data):
         super().__init__(data)
         self.prev = prev
 
     @staticmethod
+    def linked_nodes(left_node: Node, right_node: Optional[Node] = None, prev_node: Optional[Node] = None) -> None:
+        """
+        Функция, которая связывает между собой два узла.
+
+        :param left_node: Левый или предыдущий узел
+        :param right_node: Правый или следующий узел
+        :param prev_node:
+        """
+        left_node.next = right_node
+        left_node = prev_node
+
+
+if __name__ == '__main__':
+    list_ =[1, 2, 3]
+    ll = LinkedList(list_)
+
+
 

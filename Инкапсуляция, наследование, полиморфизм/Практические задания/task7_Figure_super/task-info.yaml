@@ -8,14 +8,14 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 203
-    length: 23
+  - offset: 202
+    length: 42
     placeholder_text: '# TODO вызвать конструктор базового класса'
     initial_state:
       length: 42
       offset: 202
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: super().__init__(name=name)
   text: |
@@ -44,5 +44,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Fri, 14 Jan 2022 15:36:54 UTC
+  time: Sat, 15 Jan 2022 18:49:49 UTC
 record: -1

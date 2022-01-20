@@ -50,6 +50,7 @@ class LinkedList:
             raise IndexError()
 
         current_node = self.head
+        print(current_node, 'step')
         for _ in range(index):
             current_node = current_node.next
 
@@ -100,8 +101,11 @@ class LinkedList:
             raise TypeError()
 
         insert_node = Node(value)
+        print(insert_node, 'insert_node')
 
         if index == 0:
+            print(insert_node.next, 'node.next')
+            print(self.head, 'self.head')
             insert_node.next = self.head
             self.head = insert_node
             self.len += 1
@@ -109,6 +113,8 @@ class LinkedList:
             self.append(value)
         else:
             prev_node = self.step_by_step_on_nodes(index - 1)
+            print(prev_node)
+            print(prev_node.next, 'prev_node.next')
             next_node = prev_node.next
 
             self.linked_nodes(prev_node, insert_node)
@@ -118,19 +124,11 @@ class LinkedList:
 
 
 if __name__ == '__main__':
-    list_ = [1, 2, 3]
+    list_ = [6, 1, 2, 3]
     linked_list = LinkedList(list_)
-    print(linked_list)
 
-    linked_list.insert(0, 0)
-    print(linked_list)
-
-    linked_list.insert(len(linked_list), len(linked_list))
-    print(linked_list)
-
-    linked_list.insert(100, 100)
-    print(linked_list)
+   
 
     linked_list.insert(2, "wow")
     print(linked_list)
-    print(linked_list[2] == "wow")
+

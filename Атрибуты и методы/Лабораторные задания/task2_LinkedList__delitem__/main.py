@@ -6,20 +6,29 @@ from node import Node
 class LinkedList:
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
+        print('init')
         self.len = 0
         self.head: Optional[Node] = None
 
         if data is not None:
+            print(data, 'data')
             for value in data:
+                print(value, 'value v init')
                 self.append(value)
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
+        print('append')
         append_node = Node(value)
+        print(append_node, 'append-node')
 
         if self.head is None:
+            print('if none')
             self.head = append_node
+            print(self.head, 'self.head v if')
+
         else:
+            print('else')
             last_index = self.len - 1
             last_node = self.step_by_step_on_nodes(last_index)
 
@@ -38,11 +47,12 @@ class LinkedList:
         :param left_node: Левый или предыдущий узел
         :param right_node: Правый или следующий узел
         """
+        print('linked-nodes')
         left_node.set_next(right_node)
 
     def step_by_step_on_nodes(self, index: int) -> Node:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
-
+        print('step by step')
         if not isinstance(index, int):
             raise TypeError()
 
@@ -50,22 +60,28 @@ class LinkedList:
             raise IndexError()
 
         current_node = self.head
+        print(self.head, 'self.head')
+        print(index)
         for _ in range(index):
-            current_node = current_node.next
 
+            current_node = current_node.next
+        print('return current node')
         return current_node
 
     def __getitem__(self, index: int) -> Any:
         """ Метод возвращает значение узла по указанному индексу. """
+        print('getitem')
         node = self.step_by_step_on_nodes(index)
         return node.value
 
     def __setitem__(self, index: int, value: Any) -> None:
         """ Метод устанавливает значение узла по указанному индексу. """
+        print('setitem')
         node = self.step_by_step_on_nodes(index)
         node.value = value
 
     def __delitem__(self, index: int):
+        print('delitem')
         if not isinstance(index, int):
             raise TypeError()
 
@@ -79,14 +95,18 @@ class LinkedList:
             tail.next = None
         else:
             prev_node = self.step_by_step_on_nodes(index - 1)
+            print(prev_node, 'prev')
             del_node = prev_node.next
+            print(del_node, 'del')
             next_node = del_node.next
+            print(next_node, 'next')
 
             self.linked_nodes(prev_node, next_node)
 
         self.len -= 1
 
     def to_list(self) -> list:
+        print('to_list')
         return [linked_list_value for linked_list_value in self]
 
     def __repr__(self) -> str:
@@ -97,15 +117,9 @@ class LinkedList:
 
 
 if __name__ == '__main__':
-    list_ = [1, 2, 3]
+    list_ = [6, 10, 3]
     linked_list = LinkedList(list_)
-    print(linked_list)
 
     del linked_list[1]
-    print(linked_list)
 
-    del linked_list[1]
-    print(linked_list)
 
-    del linked_list[0]
-    print(linked_list)

@@ -10,14 +10,14 @@ files:
   visible: true
   placeholders:
   - offset: 388
-    length: 14
+    length: 47
     placeholder_text: '...  # TODO вызываем метод area базового класса'
     initial_state:
       length: 47
       offset: 388
     initialized_from_dependency: false
-    selected: true
-    status: Solved
+    selected: false
+    status: Unchecked
     encrypted_possible_answer: super().area()
   text: |
     class Rectangle:
@@ -51,8 +51,5 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: Fri, 14 Jan 2022 16:01:28 UTC
+status: Unchecked
 record: -1

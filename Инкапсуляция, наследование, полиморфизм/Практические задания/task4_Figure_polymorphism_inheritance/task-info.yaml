@@ -11,14 +11,14 @@ files:
   visible: true
   placeholders:
   - offset: 238
-    length: 180
+    length: 59
     placeholder_text: '...  # TODO определить конструктор и перегрузить метод area'
     initial_state:
       length: 59
       offset: 238
     initialized_from_dependency: false
-    selected: true
-    status: Solved
+    selected: false
+    status: Unchecked
     encrypted_possible_answer: |-
       def __init__(self, a, b):
               self.a = a
@@ -27,15 +27,15 @@ files:
           def area(self):
               print(f"Вызван метод класса {self.__class__.__name__}")
               return self.a * self.b
-  - offset: 485
-    length: 160
+  - offset: 364
+    length: 59
     placeholder_text: '...  # TODO определить конструктор и перегрузить метод area'
     initial_state:
       length: 59
       offset: 364
     initialized_from_dependency: false
-    selected: true
-    status: Solved
+    selected: false
+    status: Unchecked
     encrypted_possible_answer: |-
       def __init__(self, r):
               self.r = r
@@ -80,8 +80,5 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: Fri, 14 Jan 2022 15:51:05 UTC
+status: Unchecked
 record: -1

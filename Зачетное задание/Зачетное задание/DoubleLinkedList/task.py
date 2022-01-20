@@ -9,6 +9,7 @@ class LinkedList(MutableSequence):
 
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
+        print('init linkedlist')
         self.len = 0
         self.head: Optional[Node] = None
         self.tail = self.head
@@ -19,6 +20,7 @@ class LinkedList(MutableSequence):
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
+        print('append')
         append_node = Node(value)
 
         if self.head is None:
@@ -31,6 +33,7 @@ class LinkedList(MutableSequence):
 
     def step_by_step_on_nodes(self, index: int) -> Node:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
+        print('step by step')
         if not isinstance(index, int):
             raise TypeError()
 
@@ -51,6 +54,7 @@ class LinkedList(MutableSequence):
         :param left_node: Левый или предыдущий узел
         :param right_node: Правый или следующий узел
         """
+        print("linked nodes")
         left_node.next = right_node
 
     def __getitem__(self, index: int) -> Any:
@@ -119,22 +123,14 @@ class LinkedList(MutableSequence):
 
 
 class DoubleLinkedList(LinkedList):
+    print("Doublelinkedlist")
 
-    def append(self, value: Any):
-
-        append_node = DoubleLinkedNode(value)
-
-        if self.head is None:
-            self.head = self.tail = append_node
-        else:
-            self.linked_nodes(self.tail, append_node)
-            self.tail = append_node
-
-        self.len += 1
     @staticmethod
     def linked_nodes(left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
+        print('Double linked_nodes')
         left_node.next = right_node
         right_node.prev = left_node
+        print(left_node, right_node.prev, right_node)
 
 
 
@@ -152,4 +148,5 @@ if __name__ == "__main__":
     ll = LinkedList(list_)
     double = DoubleLinkedList(list_)
     print(double)
+
 

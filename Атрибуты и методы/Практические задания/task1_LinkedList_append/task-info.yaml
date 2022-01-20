@@ -9,8 +9,8 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 246
-    length: 49
+  - offset: 268
+    length: 43
     placeholder_text: '...  # TODO инициализировать связный список'
     initial_state:
       length: 43
@@ -22,8 +22,8 @@ files:
       if data is not None:
                   for value in data:
                       self.append(value)
-  - offset: 1527
-    length: 233
+  - offset: 1917
+    length: 215
     placeholder_text: '...  # TODO реализовать алгоритм добавления узла в конец последовательности'
     initial_state:
       length: 75
@@ -147,5 +147,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 29 Dec 2021 17:15:40 UTC
+  time: Thu, 13 Jan 2022 19:33:58 UTC
 record: -1

@@ -8,7 +8,6 @@ class LinkedList:
         """Конструктор связного списка"""
         self.len = 0
         self.head: Optional[Node] = None
-
         self.list_nodes = []
         if data is not None:
             self.init_linked_list(data)
@@ -60,5 +59,6 @@ class LinkedList:
 
 if __name__ == '__main__':
     list_ = [1, 2, 3]
+    node = Node(1, None)
     linked_list = LinkedList(list_)
-    print(linked_list)
+    print(linked_list[2])

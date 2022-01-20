@@ -16,7 +16,10 @@ class Date:
 
     def is_leap_year(self, year: int):
         """Проверяет, является ли год високосным"""
-        ...  # TODO
+        for i in range(1, 2023, 4):
+            if self.year == i:
+                ...
+
 
     def get_max_day(self, month: int, year: int):
         """Возвращает максимальное количество дней в месяце для указанного года"""

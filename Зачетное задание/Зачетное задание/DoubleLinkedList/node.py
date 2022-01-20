@@ -1,5 +1,6 @@
 from typing import Any, Optional
 
+
 class Node:
     """ Класс, который описывает узел связного списка. """
     def __init__(self, value: Any, next_: Optional["Node"] = None):
@@ -21,13 +22,14 @@ class Node:
         return self._next
 
     @next.setter
-    def next(self, next_: Optional["Mode"] = None):
+    def next(self, next_: Optional["Node"] = None):
         self.is_valid(next_)
         self._next = next_
 
 
 class DoubleLinkedNode(Node):
     def __init__(self, value, next_, prev):
+        print('init double')
         super().__init__(value, next_)
         self.prev = prev
         super().__str__()
@@ -38,9 +40,11 @@ class DoubleLinkedNode(Node):
 
     @property
     def prev(self):
+        print("getter prev")
         return self._prev
 
     @prev.setter
     def prev(self, prev):
+        print("setter prev")
         self.is_valid(prev)
         self._prev = prev

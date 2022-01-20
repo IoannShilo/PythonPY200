@@ -10,56 +10,56 @@ files:
   visible: true
   placeholders:
   - offset: 1391
-    length: 12
+    length: 36
     placeholder_text: '...  # TODO подставьте нужную ошибку'
     initial_state:
       length: 36
       offset: 1391
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: IndexError()
-  - offset: 1668
-    length: 66
+  - offset: 1692
+    length: 6
     placeholder_text: '# TODO'
     initial_state:
       length: 6
       offset: 1692
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       node = self.step_by_step_on_nodes(index)
               return node.value
-  - offset: 1775
-    length: 32
+  - offset: 1739
+    length: 63
     placeholder_text: '...  # TODO Метод to_list реализовать через list comprehension.'
     initial_state:
       length: 63
       offset: 1739
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: return [linked_list_value for linked_list_value in
       self]
-  - offset: 1848
-    length: 53
+  - offset: 1843
+    length: 61
     placeholder_text: '...  # TODO c помощью метода to_list реализовать данный метод'
     initial_state:
       length: 61
       offset: 1843
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: return f"{self.__class__.__name__}({self.to_list()})"
-  - offset: 1941
-    length: 26
+  - offset: 1944
+    length: 61
     placeholder_text: '...  # TODO c помощью метода to_list реализовать данный метод'
     initial_state:
       length: 61
       offset: 1944
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: return f"{self.to_list()}"
   text: |
@@ -181,5 +181,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 29 Dec 2021 17:28:05 UTC
+  time: Thu, 13 Jan 2022 19:35:36 UTC
 record: -1
