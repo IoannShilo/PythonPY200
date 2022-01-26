@@ -7,12 +7,13 @@ from node import Node, DoubleLinkedNode
 
 class LinkedList(MutableSequence):
 
+    CLASS_NODE = Node
+
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
-        print('init linkedlist')
-        self.len = 0
-        self.head: Optional[Node] = None
-        self.tail = self.head
+        self._len = 0
+        self._head: Optional[Node] = None
+        self._tail = self._head
 
         if data is not None:
             for value in data:
@@ -20,27 +21,25 @@ class LinkedList(MutableSequence):
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
-        print('append')
-        append_node = Node(value)
+        append_node = self.CLASS_NODE(value)
 
-        if self.head is None:
-            self.head = self.tail = append_node
+        if self._head is None:
+            self._head = self._tail = append_node
         else:
-            self.linked_nodes(self.tail, append_node)
-            self.tail = append_node
+            self.linked_nodes(self._tail, append_node)
+            self._tail = append_node
 
-        self.len += 1
+        self._len += 1
 
     def step_by_step_on_nodes(self, index: int) -> Node:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
-        print('step by step')
         if not isinstance(index, int):
             raise TypeError()
 
-        if not 0 <= index < self.len:  # для for
+        if not 0 <= index < self._len:  # для for
             raise IndexError()
 
-        current_node = self.head
+        current_node = self._head
         for _ in range(index):
             current_node = current_node.next
 
@@ -71,12 +70,12 @@ class LinkedList(MutableSequence):
         if not isinstance(index, int):
             raise TypeError()
 
-        if not 0 <= index < self.len:
+        if not 0 <= index < self._len:
             raise IndexError()
 
         if index == 0:
-            self.head = self.head.next
-        elif index == self.len - 1:
+            self._head = self._head.next
+        elif index == self._len - 1:
             tail = self.step_by_step_on_nodes(index - 1)
             tail.next = None
         else:
@@ -86,7 +85,7 @@ class LinkedList(MutableSequence):
 
             self.linked_nodes(prev_node, next_node)
 
-        self.len -= 1
+        self._len -= 1
 
     def insert(self, index: int, value: Any) -> None:
         if not isinstance(index, int):
@@ -95,10 +94,10 @@ class LinkedList(MutableSequence):
         insert_node = Node(value)
 
         if index == 0:
-            insert_node.next = self.head
-            self.head = insert_node
-            self.len += 1
-        elif index >= self.len - 1:
+            insert_node.next = self._head
+            self._head = insert_node
+            self._len += 1
+        elif index >= self._len - 1:
             self.append(value)
         else:
             prev_node = self.step_by_step_on_nodes(index - 1)
@@ -107,10 +106,10 @@ class LinkedList(MutableSequence):
             self.linked_nodes(prev_node, insert_node)
             self.linked_nodes(insert_node, next_node)
 
-            self.len += 1
+            self._len += 1
 
     def __len__(self):
-        return self.len
+        return self._len
 
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
@@ -123,30 +122,20 @@ class LinkedList(MutableSequence):
 
 
 class DoubleLinkedList(LinkedList):
-    print("Doublelinkedlist")
+
+    CLASS_NODE = DoubleLinkedNode
 
     @staticmethod
     def linked_nodes(left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
-        print('Double linked_nodes')
         left_node.next = right_node
         right_node.prev = left_node
-        print(left_node, right_node.prev, right_node)
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
     list_ = [1, 2, 3, 4]
-    ll = LinkedList(list_)
-    double = DoubleLinkedList(list_)
-    print(double)
+    dll = DoubleLinkedList(list_)
+    print(dll.next)
+
+
 
 

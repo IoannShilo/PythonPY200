@@ -28,23 +28,21 @@ class Node:
 
 
 class DoubleLinkedNode(Node):
-    def __init__(self, value, next_, prev):
-        print('init double')
+    def __init__(self, value: Any, prev: Optional["DoubleLinkedNode"] = None, next_: Optional["DoubleLinkedNode"] = None):
         super().__init__(value, next_)
         self.prev = prev
         super().__str__()
         super().is_valid(self)
 
     def __repr__(self) -> str:
-        return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}), {self.prev}"
+        return f"Node({self.value}, {None}, {None})" if self.next and self.prev is None \
+            else f"Node({self.value}, Node({self.next}), {self.prev}"
 
     @property
     def prev(self):
-        print("getter prev")
         return self._prev
 
     @prev.setter
     def prev(self, prev):
-        print("setter prev")
         self.is_valid(prev)
         self._prev = prev
