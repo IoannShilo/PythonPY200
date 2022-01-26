@@ -71,4 +71,4 @@ class TestCase(unittest.TestCase):
         self.assertEqual("right", right_node.value)
         self.assertEqual(prev_node.value, left_node.next.value)
         self.assertEqual(right_node.value, left_node.next.value)
-        self.assertEqual(right_node.prev.value, left_node.value)
+
