@@ -1,12 +1,10 @@
 import unittest
 
-from typing import Any, Iterable, Optional
-
 from node import Node, DoubleLinkedNode
 from task import LinkedList, DoubleLinkedList
 
-@unittest.skip("Будет проверен позже")
-class TestCaseNode(unittest.TestCase):
+
+class TestCase(unittest.TestCase):
 
     def test_init_node_without_next(self):
         """Проверить следующий узел после инициализации с аргументом next_ по умолчанию"""
@@ -32,7 +30,7 @@ class TestCaseNode(unittest.TestCase):
         expected_repr = "Node(5, None)"
         self.assertEqual(repr(node), expected_repr,
                          msg="Неправильный __repr__")
-
+    @unittest.skip("Будет реализован позже")
     def test_repr_node_with_next(self):
         """Проверить метод __repr__, для случая когда установлен следующий узел."""
         node = Node(5, Node(10))
@@ -54,9 +52,6 @@ class TestCaseNode(unittest.TestCase):
         with self.assertRaises(TypeError):
             Node.is_valid(5)
 
-
-class TestCaseDoubleLinkedNode(unittest.TestCase):
-
     def test_init_double_linked_node_without_prev(self):
         dln = DoubleLinkedNode(5)
 
@@ -66,7 +61,7 @@ class TestCaseDoubleLinkedNode(unittest.TestCase):
     def test_init_double_linked_node_with_prev(self):
         right_node = DoubleLinkedNode("right")
         left_node = DoubleLinkedNode("left", next_= right_node)
-        right_node = DoubleLinkedNode(right_node.value, prev=left_node.value)
+        prev_node = DoubleLinkedNode("right", prev=left_node, next_=right_node)
 
         self.assertIs(right_node, left_node.next)
         self.assertIs(left_node, prev_node.prev)
@@ -74,40 +69,6 @@ class TestCaseDoubleLinkedNode(unittest.TestCase):
         self.assertIsNone(left_node.prev)
         self.assertEqual("left", left_node.value)
         self.assertEqual("right", right_node.value)
-        self.assertEqual(right_node.value, prev_node.value)
+        self.assertEqual(prev_node.value, left_node.next.value)
         self.assertEqual(right_node.value, left_node.next.value)
-
-    def test_repr_double_linked_node_without_prev(self):
-        """Проверить метод __repr__, для случая когда нет предыдущего узла."""
-        dln = DoubleLinkedNode(5)
-
-        expected_repr = "DoubleLinkedNode(5, None, None)"
-        self.assertEqual(repr(dln), expected_repr,
-                         msg="Неправильный __repr__")
-
-    def test_is_valid_double_linked_node(self):
-        DoubleLinkedNode.is_valid(None)
-        DoubleLinkedNode.is_valid(DoubleLinkedNode(5))
-
-        with self.assertRaises(TypeError):
-            DoubleLinkedNode.is_valid(5)
-
-
-class TestCaseLinkedList(unittest.TestCase):
-
-    def test_class_attribute(self):
-        self.assertEqual(LinkedList.CLASS_NODE, Node)
-
-    def test_init_linked_list(self):
-        ll = LinkedList([1, 2, 3, 4, 5])
-
-        self.assertIsInstance(ll, Iterable, None)
-        self.assertEqual(ll._len, 5)
-        with self.assertRaises(AssertionError):
-            self.assertEqual(ll._len, 0)
-
-        self.assertEqual(ll._head, 1)
-
-
-
 
