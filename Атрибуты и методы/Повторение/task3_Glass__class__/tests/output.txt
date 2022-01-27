@@ -1,3 +1,0 @@
-<class '__main__.Glass'>
-<class '__main__.Glass'>
-True
