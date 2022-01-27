@@ -1,6 +1,6 @@
 from collections.abc import MutableSequence
 
-from typing import Any, Iterable, Optional, Iterator
+from typing import Any, Iterable, Optional
 
 from node import Node, DoubleLinkedNode
 
@@ -11,9 +11,9 @@ class LinkedList(MutableSequence):
 
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
-        self.__len = 0
-        self.__head: Optional[Node] = None
-        self._tail = self.__head
+        self._len = 0
+        self._head: Optional[Node] = None
+        self._tail = self._head
 
         if data is not None:
             for value in data:
@@ -23,23 +23,23 @@ class LinkedList(MutableSequence):
         """ Добавление элемента в конец связного списка. """
         append_node = self.CLASS_NODE(value)
 
-        if self.__head is None:
-            self.__head = self._tail = append_node
+        if self._head is None:
+            self._head = self._tail = append_node
         else:
             self.linked_nodes(self._tail, append_node)
             self._tail = append_node
 
-        self.__len += 1
+        self._len += 1
 
     def step_by_step_on_nodes(self, index: int) -> Node:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
         if not isinstance(index, int):
             raise TypeError()
 
-        if not 0 <= index < self.__len:  # для for
+        if not 0 <= index < self._len:  # для for
             raise IndexError()
 
-        current_node = self.__head
+        current_node = self._head
         for _ in range(index):
             current_node = current_node.next
 
@@ -53,7 +53,6 @@ class LinkedList(MutableSequence):
         :param left_node: Левый или предыдущий узел
         :param right_node: Правый или следующий узел
         """
-        print("linked nodes")
         left_node.next = right_node
 
     def __getitem__(self, index: int) -> Any:
@@ -70,12 +69,12 @@ class LinkedList(MutableSequence):
         if not isinstance(index, int):
             raise TypeError()
 
-        if not 0 <= index < self.__len:
+        if not 0 <= index < self._len:
             raise IndexError()
 
         if index == 0:
-            self.__head = self.__head.next
-        elif index == self.__len - 1:
+            self._head = self._head.next
+        elif index == self._len - 1:
             tail = self.step_by_step_on_nodes(index - 1)
             tail.next = None
         else:
@@ -85,7 +84,7 @@ class LinkedList(MutableSequence):
 
             self.linked_nodes(prev_node, next_node)
 
-        self.__len -= 1
+        self._len -= 1
 
     def insert(self, index: int, value: Any) -> None:
         if not isinstance(index, int):
@@ -94,10 +93,10 @@ class LinkedList(MutableSequence):
         insert_node = Node(value)
 
         if index == 0:
-            insert_node.next = self.__head
-            self.__head = insert_node
-            self.__len += 1
-        elif index >= self.__len - 1:
+            insert_node.next = self._head
+            self._head = insert_node
+            self._len += 1
+        elif index >= self._len - 1:
             self.append(value)
         else:
             prev_node = self.step_by_step_on_nodes(index - 1)
@@ -106,10 +105,10 @@ class LinkedList(MutableSequence):
             self.linked_nodes(prev_node, insert_node)
             self.linked_nodes(insert_node, next_node)
 
-            self.__len += 1
+            self._len += 1
 
     def __len__(self):
-        return self.__len
+        return self._len
 
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
