@@ -20,10 +20,10 @@ files:
 - name: task.py
   visible: true
   learner_created: true
-- name: test_task.py
+- name: __init__.py
   visible: true
   learner_created: true
-- name: __init__.py
+- name: test_task.py
   visible: true
   learner_created: true
 status: Unchecked
