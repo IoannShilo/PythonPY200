@@ -33,8 +33,6 @@ class DoubleLinkedNode(Node):
                  next_: Optional["DoubleLinkedNode"] = None):
         super().__init__(value, next_)
         self.prev = prev
-        super().__str__()
-        super().is_valid(self)
 
     def __repr__(self) -> str:
         return f"Node({self.value}, {None}, {None})" if self.next and self.prev is None \

@@ -98,8 +98,36 @@ class TestCaseLinkedList(unittest.TestCase):
         self.assertEqual(ll._len, 5)
         with self.assertRaises(AssertionError):
             self.assertEqual(ll._len, 0)
-
+        print(ll._head)
         self.assertEqual(ll._head, 1)
+
+    def test_type_error_method(self):
+        LinkedList.type_error(1)
+
+        with self.assertRaises(TypeError):
+            LinkedList.type_error('string')
+
+        with self.assertRaises(TypeError):
+            LinkedList.type_error([1, 2, 3, 4])
+
+    def test_index_error_method(self):
+        ll = LinkedList([1, 2, 3, 4, 5])
+        ll.index_error(6)
+
+    def test_linked_nodes(self):
+        LinkedList.linked_nodes(left_node=Node(1), right_node=Node(2))
+        self.assertEqual()
+
+
+
+    def test_append(self):
+        LinkedList.append(1)
+
+
+
+
+
+
 
 
 

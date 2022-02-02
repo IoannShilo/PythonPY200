@@ -1,5 +1,22 @@
 type: edu
 files:
+- name: __init__.py
+  visible: false
+  learner_created: false
+- name: task.py
+  visible: true
+  text: |
+    class LinkedList:
+        ...
+
+
+    class DoubleLinkedList(LinkedList):
+        ...
+
+
+    if __name__ == "__main__":
+        ...
+  learner_created: false
 - name: tests/__init__.py
   visible: false
   learner_created: false
@@ -16,13 +33,9 @@ files:
   learner_created: false
 - name: node.py
   visible: true
-  learner_created: true
-- name: task.py
-  visible: true
-  learner_created: true
-- name: __init__.py
-  visible: true
-  learner_created: true
+  text: |
+    ...
+  learner_created: false
 - name: test_task.py
   visible: true
   learner_created: true
