@@ -165,11 +165,10 @@ class LinkedList(MutableSequence):
         if value not in self:  # if not self.__contains__(value):
             raise ValueError
 
-        for i in self._data:
-
+        for i in self:
             if i == value:
-                self.__delitem__(i)
-
+                del self[i - 1]
+                break
 
 
 class DoubleLinkedList(LinkedList):
@@ -184,29 +183,20 @@ class DoubleLinkedList(LinkedList):
 
 if __name__ == "__main__":
     ll = LinkedList()
-    print(ll.counter())
-
-    list_ = [1, 2, 3, 4]
+    list_ = [1, 2, 2, 3, 2, 4]
     dll_1 = DoubleLinkedList(list_)
+    print(dll_1)
+    dll_1.remove(2)
+    print(dll_1)
+
     # dll.remove(1)
     # print(dll)
-    dll_2 = DoubleLinkedList(list_)
-
-    print(LinkedList.counter())
-    print(DoubleLinkedList.counter())
-
+    # dll_2 = DoubleLinkedList(list_)
+    #
+    # print(LinkedList.counter())
+    # print(DoubleLinkedList.counter())
 
     # print(1 in dll)
     # print(7 in dll)
     # for item in dll:
     #     print(item)
-
-
-
-
-
-
-
-
-
-
