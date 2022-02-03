@@ -13,8 +13,9 @@ class Node:
     def __str__(self) -> str:
         return str(self.value)
 
-    def is_valid(self, node: Any) -> None:
-        if not isinstance(node, (type(None), Node)):
+    @classmethod
+    def is_valid(cls, node: Any) -> None:
+        if not isinstance(node, (type(None), cls)):
             raise TypeError
 
     @property
@@ -28,15 +29,16 @@ class Node:
 
 
 class DoubleLinkedNode(Node):
-    def __init__(self, value: Any, prev: Optional["DoubleLinkedNode"] = None, next_: Optional["DoubleLinkedNode"] = None):
+    def __init__(self, value: Any, prev: Optional["DoubleLinkedNode"] = None,
+                 next_: Optional["DoubleLinkedNode"] = None):
         super().__init__(value, next_)
         self.prev = prev
-        super().__str__()
-        super().is_valid(self)
 
     def __repr__(self) -> str:
-        return f"Node({self.value}, {None}, {None})" if self.next and self.prev is None \
-            else f"Node({self.value}, Node({self.next}), {self.prev}"
+        next_prev = None if self.prev is None else f"DoubleLinkedNode({self.prev})"
+        next_repr = None if self.next is None else f"DoubleLinkedNode({self.next})"  # todo make all
+
+        return f"DoubleLinkedNode({self.value}, {next_prev}, {next_repr})"
 
     @property
     def prev(self):
